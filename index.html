@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A pricing component with different plans, monthly or anually">
+    <title>Pricing component</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="title">Our pricing</h2>
+    </header>
+    <main>
+        <div class="toggle">
+            <h3 class="toggle__anually">Anually</h3>
+            <label class="toggle__switch">
+                <input type="checkbox" checked class="toggle__switch--checked">
+                <span class=" toggle__round slider
+                    round"></span>
+            </label>
+            <h3 class="toggle__monthly">monthly</h3>
+
+        </div>
+        <div class="card-c">
+            <div class="card">
+                <h3 class="card__head">Basic</h3>
+                <h1 class=" card__price card__price--hidden"> <span id="test"
+                        class="card__price--hidden-currency">$</span> 199.99
+                </h1>
+                <h1 class="card__price"> <span
+                        class="card__price--currency">$</span> 19.99
+                </h1>
+                <div class="card__text">
+                    <hr class="card__line">
+                    <p class="card__text--details"> 500 GB Storage </p>
+                    <hr class="card__line">
+                    <p class="card__text--details"> 2 Users Allowed</p>
+                    <hr class="card__line">
+                    <p class="card__text--details"> Send up to 3 GB</p>
+                    <hr class="card__line">
+                </div>
+                <button class="card__button">Learn more</button>
+            </div>
+            <div class="card card--main">
+                <h3 class="card__head">Professional</h3>
+                <h1 class="card__price card__price--hidden"> <span
+                        class="card__price--hidden-currency">$</span> 249.99
+                </h1>
+                <h1 class="card__price"> <span
+                        class="card__price--currency">$</span>24.99</h1>
+                <div class="card__text">
+                    <hr class="card__line">
+                    <p class="card__text--details">500 TB Storage </p>
+                    <hr class="card__line">
+                    <p class="card__text--details"> 10 Users Allowed</p>
+                    <hr class="card__line">
+                    <p class="card__text--details"> Send up to 10 GB</p>
+                    <hr class="card__line">
+                </div>
+                <button class="card__button card__button--main">Learn
+                    more</button>
+            </div>
+            <div class="card">
+                <h3 class="card__head">Master</h3>
+
+                <h1 class="card__price"> <span
+                        class="card__price--currency">$</span>39.99</h1>
+                <h1 class="card__price card__price--hidden"> <span
+                        class="card__price--hidden-currency">$</span> 399.99
+                </h1>
+                <div class="card__text">
+                    <hr class="card__line">
+                    <p class="card__text--details"> 2 GB Storage </p>
+                    <hr class="card__line">
+                    <p class="card__text--details"> 20 Users Allowed</p>
+                    <hr class="card__line">
+                    <p class="card__text--details"> Send up to 20 GB</p>
+                    <hr class="card__line">
+                </div>
+                <button class="card__button">Learn more</button>
+            </div>
+
+
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

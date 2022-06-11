@@ -1,0 +1,220 @@
+/* TABLE OF CONTENT 
+* Mixins
+* Variables
+* Toggle
+  __
+* .card-c / .Card
+  __
+    --
+* Button
+* Media Query
+______________________*/
+
+/* MIXINS  */
+@mixin font {
+  font-family: Lato, Helvetica, sans-serif;
+  color: #383838;
+}
+@mixin button {
+  margin: 1rem 0rem;
+  padding: 0.8rem 0rem;
+  width: 100%;
+  border: 1px solid $grey;
+  background: $btnBackgorund;
+  color: $white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px $grey;
+}
+@mixin mainBtn {
+  margin: 1rem 0rem;
+  padding: 0.8rem 0rem;
+  width: 100%;
+  border: 1px solid $purple;
+  background: $white;
+  color: $purple;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px $purple;
+}
+/* Variables */
+$lineColor: #d9d9d9;
+$btnBackgorund: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%);
+$grey: #c4c4c4;
+$white: white;
+$purple: #7b7fe1;
+$toggleBefore: #c7c8f4;
+$toggle: #8b8fe6;
+$softGrey: #928f8f62;
+
+body {
+  background: #f7f7fe;
+  @include font;
+}
+.title {
+  text-align: center;
+}
+/* Toggle */
+.toggle {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  &__anually,
+  &__monthly {
+    padding: 0rem 0.5rem;
+    color: $softGrey;
+  }
+}
+/* Toggle__ */
+
+.toggle__switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  align-self: center;
+  /* Hiding the checked box */
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.toggle__round {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c7c8f4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: $white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+/* background for toggle switch when it is "checked"*/
+input {
+  &.toggle__switch--checked:checked + .toggle__round {
+    background-color: $toggle;
+  }
+}
+/* background for toggle switch when it is "checked"*/
+
+input {
+  &.toggle__switch--checked:focus + .toggle__round {
+    box-shadow: 0 0 1px #2196f3;
+  }
+}
+
+input {
+  &.toggle__switch--checked:checked + .toggle__round:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+}
+
+/* Rounded sliders */
+span {
+  &.toggle__round {
+    border-radius: 34px;
+  }
+  &.toggle__round:before {
+    border-radius: 50%;
+  }
+}
+
+/*Card-c / Card */
+.card-c {
+  display: flex;
+  justify-content: center;
+  @include font;
+}
+.card {
+  padding: 3rem;
+  margin: 2rem 0.1rem;
+  background: #ffffff;
+  box-shadow: 0px 3px 10px #5b5b8b67;
+  width: 15%;
+  border-radius: 1rem;
+  text-align: center;
+  /* __ */
+  &__head {
+    margin: 1rem;
+  }
+
+  &__line {
+    border: none;
+    border-bottom: 0.8px solid $lineColor;
+    padding: 0.2rem 0rem;
+  }
+  &__price {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0.5rem 0rem 1.5rem 0rem;
+
+    &--hidden {
+      display: none;
+    }
+    &--currency {
+      font-size: 1.8rem;
+      align-self: center;
+    }
+    span {
+      &.card__price--hidden-currency {
+        font-size: 1.8rem;
+        align-self: center;
+      }
+    }
+  }
+  &--main {
+    margin: 0.1rem -0.1rem;
+    z-index: 1;
+    color: $white;
+    background: $btnBackgorund;
+  }
+  &__button {
+    @include button;
+  }
+  &__button:hover {
+    border: 1px solid $purple;
+    background: $white;
+    color: #383838;
+  }
+  &__button--main {
+    @include mainBtn;
+  }
+  &__button--main:hover {
+    background: $btnBackgorund;
+    color: $white;
+    border: 1px solid $white;
+  }
+}
+/* Media Query */
+@media only screen and (max-width: 768px) {
+  .card-c {
+    flex-direction: column;
+  }
+  .card {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+}

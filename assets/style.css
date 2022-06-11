@@ -1,0 +1,233 @@
+/* TABLE OF CONTENT 
+* Mixins
+* Variables
+* Toggle
+  __
+* .card-c / .Card
+  __
+    --
+* Button
+* Media Query
+______________________*/
+/* MIXINS  */
+/* Variables */
+body {
+  background: #f7f7fe;
+  font-family: Lato, Helvetica, sans-serif;
+  color: #383838;
+}
+
+.title {
+  text-align: center;
+}
+
+/* Toggle */
+.toggle {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.toggle__anually, .toggle__monthly {
+  padding: 0rem 0.5rem;
+  color: #928f8f62;
+}
+
+/* Toggle__ */
+.toggle__switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /* Hiding the checked box */
+}
+
+.toggle__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle__round {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c7c8f4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle__round:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* background for toggle switch when it is "checked"*/
+input.toggle__switch--checked:checked + .toggle__round {
+  background-color: #8b8fe6;
+}
+
+/* background for toggle switch when it is "checked"*/
+input.toggle__switch--checked:focus + .toggle__round {
+  -webkit-box-shadow: 0 0 1px #2196f3;
+          box-shadow: 0 0 1px #2196f3;
+}
+
+input.toggle__switch--checked:checked + .toggle__round:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+span.toggle__round {
+  border-radius: 34px;
+}
+
+span.toggle__round:before {
+  border-radius: 50%;
+}
+
+/*Card-c / Card */
+.card-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Lato, Helvetica, sans-serif;
+  color: #383838;
+}
+
+.card {
+  padding: 3rem;
+  margin: 2rem 0.1rem;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 3px 10px #5b5b8b67;
+          box-shadow: 0px 3px 10px #5b5b8b67;
+  width: 15%;
+  border-radius: 1rem;
+  text-align: center;
+  /* __ */
+}
+
+.card__head {
+  margin: 1rem;
+}
+
+.card__line {
+  border: none;
+  border-bottom: 0.8px solid #d9d9d9;
+  padding: 0.2rem 0rem;
+}
+
+.card__price {
+  font-size: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0.5rem 0rem 1.5rem 0rem;
+}
+
+.card__price--hidden {
+  display: none;
+}
+
+.card__price--currency {
+  font-size: 1.8rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card__price span.card__price--hidden-currency {
+  font-size: 1.8rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card--main {
+  margin: 0.1rem -0.1rem;
+  z-index: 1;
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%);
+}
+
+.card__button {
+  margin: 1rem 0rem;
+  padding: 0.8rem 0rem;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%);
+  color: white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 5px #c4c4c4;
+          box-shadow: 0px 3px 5px #c4c4c4;
+}
+
+.card__button:hover {
+  border: 1px solid #7b7fe1;
+  background: white;
+  color: #383838;
+}
+
+.card__button--main {
+  margin: 1rem 0rem;
+  padding: 0.8rem 0rem;
+  width: 100%;
+  border: 1px solid #7b7fe1;
+  background: white;
+  color: #7b7fe1;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 5px #7b7fe1;
+          box-shadow: 0px 3px 5px #7b7fe1;
+}
+
+.card__button--main:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(90deg, #a3a8f0 0%, #696fdd 100%);
+  color: white;
+  border: 1px solid white;
+}
+
+/* Media Query */
+@media only screen and (max-width: 768px) {
+  .card-c {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

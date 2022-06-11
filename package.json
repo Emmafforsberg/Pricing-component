@@ -1,0 +1,14 @@
+{
+  "name": "price_toggle",
+  "version": "1.0.0",
+  "description": "Price component w. toggle using JavaScript",
+  "main": "main.js",
+  "scripts": {
+    "scss": "node-sass --watch assets/scss -o assets/css"
+  },
+  "author": "Emma Forsberg",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
