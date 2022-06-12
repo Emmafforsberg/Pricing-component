@@ -212,6 +212,13 @@ span {
     border: 1px solid $white;
   }
 }
+.attribution {
+  text-align: center;
+  color: #a3a8f0;
+  a {
+    color: #7b7fe1;
+  }
+}
 /* Media Query */
 @media only screen and (max-width: 768px) {
   .card-c {
